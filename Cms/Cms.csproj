@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B8DDAFC-9D7D-4B06-B3EF-C7563F1C4154}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cms</RootNamespace>
+    <AssemblyName>Cms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44378</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.Facebook.4.2.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.Google.4.2.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.MicrosoftAccount.4.2.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.OAuth.4.2.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.Twitter.4.2.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.Web.Common.3.3.2\lib\net45\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.Web.Common.WebHost.3.3.2\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageGroupsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ShamsiDate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-rtl.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\bootstrap-rtl.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\yekannumbers.svg" />
+    <Content Include="Content\fonts\yekanweb.svg" />
+    <Content Include="Content\img\avatar.jpg" />
+    <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\img.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\phone.png" />
+    <Content Include="Content\img\refresh.png" />
+    <Content Include="Content\img\sprite.png" />
+    <Content Include="Content\img\thumb.png" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\modernizr.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\js\wow.js" />
+    <Content Include="Content\mystyle.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\PageGroups\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PageGroups\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PageGroups\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PageGroups\Index.cshtml" />
+    <Content Include="HaghNews.ico" />
+    <Content Include="quill\.eslintrc.js" />
+    <Content Include="quill\.gitignore" />
+    <Content Include="quill\assets\favicon.png" />
+    <Content Include="quill\assets\icons\align-center.svg" />
+    <Content Include="quill\assets\icons\align-justify.svg" />
+    <Content Include="quill\assets\icons\align-left.svg" />
+    <Content Include="quill\assets\icons\align-right.svg" />
+    <Content Include="quill\assets\icons\attachment.svg" />
+    <Content Include="quill\assets\icons\audio.svg" />
+    <Content Include="quill\assets\icons\authorship.svg" />
+    <Content Include="quill\assets\icons\background.svg" />
+    <Content Include="quill\assets\icons\blockquote.svg" />
+    <Content Include="quill\assets\icons\bold.svg" />
+    <Content Include="quill\assets\icons\clean.svg" />
+    <Content Include="quill\assets\icons\code.svg" />
+    <Content Include="quill\assets\icons\color.svg" />
+    <Content Include="quill\assets\icons\comment.svg" />
+    <Content Include="quill\assets\icons\direction-ltr.svg" />
+    <Content Include="quill\assets\icons\direction-rtl.svg" />
+    <Content Include="quill\assets\icons\dropdown.svg" />
+    <Content Include="quill\assets\icons\embed.svg" />
+    <Content Include="quill\assets\icons\emoji.svg" />
+    <Content Include="quill\assets\icons\float-center.svg" />
+    <Content Include="quill\assets\icons\float-full.svg" />
+    <Content Include="quill\assets\icons\float-left.svg" />
+    <Content Include="quill\assets\icons\float-right.svg" />
+    <Content Include="quill\assets\icons\font.svg" />
+    <Content Include="quill\assets\icons\formula.svg" />
+    <Content Include="quill\assets\icons\hashtag.svg" />
+    <Content Include="quill\assets\icons\header-2.svg" />
+    <Content Include="quill\assets\icons\header-3.svg" />
+    <Content Include="quill\assets\icons\header-4.svg" />
+    <Content Include="quill\assets\icons\header-5.svg" />
+    <Content Include="quill\assets\icons\header-6.svg" />
+    <Content Include="quill\assets\icons\header.svg" />
+    <Content Include="quill\assets\icons\horizontal-rule.svg" />
+    <Content Include="quill\assets\icons\image.svg" />
+    <Content Include="quill\assets\icons\indent.svg" />
+    <Content Include="quill\assets\icons\italic.svg" />
+    <Content Include="quill\assets\icons\link.svg" />
+    <Content Include="quill\assets\icons\list-bullet.svg" />
+    <Content Include="quill\assets\icons\list-check.svg" />
+    <Content Include="quill\assets\icons\list-ordered.svg" />
+    <Content Include="quill\assets\icons\map.svg" />
+    <Content Include="quill\assets\icons\mention.svg" />
+    <Content Include="quill\assets\icons\more.svg" />
+    <Content Include="quill\assets\icons\outdent.svg" />
+    <Content Include="quill\assets\icons\redo.svg" />
+    <Content Include="quill\assets\icons\size-decrease.svg" />
+    <Content Include="quill\assets\icons\size-increase.svg" />
+    <Content Include="quill\assets\icons\size.svg" />
+    <Content Include="quill\assets\icons\spacing.svg" />
+    <Content Include="quill\assets\icons\speech.svg" />
+    <Content Include="quill\assets\icons\strike.svg" />
+    <Content Include="quill\assets\icons\subscript.svg" />
+    <Content Include="quill\assets\icons\superscript.svg" />
+    <Content Include="quill\assets\icons\table-border-all.svg" />
+    <Content Include="quill\assets\icons\table-border-bottom.svg" />
+    <Content Include="quill\assets\icons\table-border-left.svg" />
+    <Content Include="quill\assets\icons\table-border-none.svg" />
+    <Content Include="quill\assets\icons\table-border-outside.svg" />
+    <Content Include="quill\assets\icons\table-border-right.svg" />
+    <Content Include="quill\assets\icons\table-border-top.svg" />
+    <Content Include="quill\assets\icons\table-delete-cells.svg" />
+    <Content Include="quill\assets\icons\table-delete-columns.svg" />
+    <Content Include="quill\assets\icons\table-delete-rows.svg" />
+    <Content Include="quill\assets\icons\table-insert-cells.svg" />
+    <Content Include="quill\assets\icons\table-insert-columns.svg" />
+    <Content Include="quill\assets\icons\table-insert-rows.svg" />
+    <Content Include="quill\assets\icons\table-merge-cells.svg" />
+    <Content Include="quill\assets\icons\table-unmerge-cells.svg" />
+    <Content Include="quill\assets\icons\table.svg" />
+    <Content Include="quill\assets\icons\underline.svg" />
+    <Content Include="quill\assets\icons\undo.svg" />
+    <Content Include="quill\assets\icons\video.svg" />
+    <Content Include="quill\blots\block.js" />
+    <Content Include="quill\blots\break.js" />
+    <Content Include="quill\blots\container.js" />
+    <Content Include="quill\blots\cursor.js" />
+    <Content Include="quill\blots\embed.js" />
+    <Content Include="quill\blots\inline.js" />
+    <Content Include="quill\blots\scroll.js" />
+    <Content Include="quill\blots\text.js" />
+    <Content Include="quill\core.js" />
+    <Content Include="quill\core\editor.js" />
+    <Content Include="quill\core\emitter.js" />
+    <Content Include="quill\core\logger.js" />
+    <Content Include="quill\core\module.js" />
+    <Content Include="quill\core\polyfill.js" />
+    <Content Include="quill\core\quill.js" />
+    <Content Include="quill\core\selection.js" />
+    <Content Include="quill\core\theme.js" />
+    <Content Include="quill\docs\0.20\assets\css\styles.css" />
+    <Content Include="quill\docs\0.20\assets\css\syntax.css" />
+    <Content Include="quill\docs\0.20\assets\images\blog\theme-1.png" />
+    <Content Include="quill\docs\0.20\assets\images\blog\theme-2.png" />
+    <Content Include="quill\docs\0.20\assets\images\browsers.png" />
+    <Content Include="quill\docs\0.20\assets\images\cloud-large.png" />
+    <Content Include="quill\docs\0.20\assets\images\cloud.png" />
+    <Content Include="quill\docs\0.20\assets\images\favicon.png" />
+    <Content Include="quill\docs\0.20\assets\images\icon.png" />
+    <Content Include="quill\docs\0.20\assets\images\pen.png" />
+    <Content Include="quill\docs\0.20\assets\images\quill-photo.jpg" />
+    <Content Include="quill\docs\0.20\assets\images\tubes.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\asana.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\front.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\intuit.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\lever.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\merchantcircle.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\reedsy.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\relateiq.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\respondly.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\salesforce.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\themexpert.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\voxmedia.png" />
+    <Content Include="quill\docs\0.20\assets\images\users\writer.png" />
+    <Content Include="quill\docs\0.20\assets\js\index.js" />
+    <Content Include="quill\docs\assets\css\base.css" />
+    <Content Include="quill\docs\assets\css\styles.css" />
+    <Content Include="quill\docs\assets\images\blog\bubble.png" />
+    <Content Include="quill\docs\assets\images\blog\color.png" />
+    <Content Include="quill\docs\assets\images\blog\formula.png" />
+    <Content Include="quill\docs\assets\images\blog\syntax.png" />
+    <Content Include="quill\docs\assets\images\blog\theme-1.png" />
+    <Content Include="quill\docs\assets\images\blog\theme-2.png" />
+    <Content Include="quill\docs\assets\images\brand-asset.png" />
+    <Content Include="quill\docs\assets\images\favicon.ico" />
+    <Content Include="quill\docs\assets\images\footer.png" />
+    <Content Include="quill\docs\assets\images\logo.svg" />
+    <Content Include="quill\docs\assets\images\users.png" />
+    <Content Include="quill\docs\blog.html" />
+    <Content Include="quill\docs\index.html" />
+    <Content Include="quill\docs\playground.html" />
+    <Content Include="quill\docs\robots.txt" />
+    <Content Include="quill\docs\_includes\analytics.html" />
+    <Content Include="quill\docs\_includes\basic-editor.html" />
+    <Content Include="quill\docs\_includes\footer.html" />
+    <Content Include="quill\docs\_includes\full-editor.html" />
+    <Content Include="quill\docs\_includes\full-toolbar.html" />
+    <Content Include="quill\docs\_includes\github.html" />
+    <Content Include="quill\docs\_includes\header.html" />
+    <Content Include="quill\docs\_includes\lotr.html" />
+    <Content Include="quill\docs\_includes\meta.html" />
+    <Content Include="quill\docs\_includes\open-source.html" />
+    <Content Include="quill\docs\_includes\sidebar.html" />
+    <Content Include="quill\docs\_includes\standalone\bubble.html" />
+    <Content Include="quill\docs\_includes\standalone\full.html" />
+    <Content Include="quill\docs\_includes\standalone\snow.html" />
+    <Content Include="quill\docs\_includes\svg\features\cross-platform.svg" />
+    <Content Include="quill\docs\_includes\svg\features\developers.svg" />
+    <Content Include="quill\docs\_includes\svg\features\open-source.svg" />
+    <Content Include="quill\docs\_includes\svg\features\scale.svg" />
+    <Content Include="quill\docs\_includes\svg\logo.svg" />
+    <Content Include="quill\docs\_includes\svg\octocat.svg" />
+    <Content Include="quill\docs\_layouts\blog.html" />
+    <Content Include="quill\docs\_layouts\default.html" />
+    <Content Include="quill\docs\_layouts\docs.html" />
+    <Content Include="quill\docs\_layouts\post.html" />
+    <Content Include="quill\docs\_layouts\standalone.html" />
+    <Content Include="quill\docs\_layouts\v0.20.html" />
+    <Content Include="quill\formats\align.js" />
+    <Content Include="quill\formats\background.js" />
+    <Content Include="quill\formats\blockquote.js" />
+    <Content Include="quill\formats\bold.js" />
+    <Content Include="quill\formats\code.js" />
+    <Content Include="quill\formats\color.js" />
+    <Content Include="quill\formats\direction.js" />
+    <Content Include="quill\formats\font.js" />
+    <Content Include="quill\formats\header.js" />
+    <Content Include="quill\formats\image.js" />
+    <Content Include="quill\formats\indent.js" />
+    <Content Include="quill\formats\italic.js" />
+    <Content Include="quill\formats\link.js" />
+    <Content Include="quill\formats\list.js" />
+    <Content Include="quill\formats\script.js" />
+    <Content Include="quill\formats\size.js" />
+    <Content Include="quill\formats\strike.js" />
+    <Content Include="quill\formats\underline.js" />
+    <Content Include="quill\formats\video.js" />
+    <Content Include="quill\mention.js" />
+    <Content Include="quill\modules\clipboard.js" />
+    <Content Include="quill\modules\formula.js" />
+    <Content Include="quill\modules\history.js" />
+    <Content Include="quill\modules\keyboard.js" />
+    <Content Include="quill\modules\syntax.js" />
+    <Content Include="quill\modules\toolbar.js" />
+    <Content Include="quill\quill.bubble.css" />
+    <Content Include="quill\quill.core.css" />
+    <Content Include="quill\quill.core.js" />
+    <Content Include="quill\quill.js" />
+    <Content Include="quill\quill.min.js" />
+    <Content Include="quill\quill.snow.css" />
+    <Content Include="quill\test\functional\epic.js" />
+    <Content Include="quill\test\helpers\unit.js" />
+    <Content Include="quill\test\unit.js" />
+    <Content Include="quill\test\unit\blots\block-embed.js" />
+    <Content Include="quill\test\unit\blots\block.js" />
+    <Content Include="quill\test\unit\blots\inline.js" />
+    <Content Include="quill\test\unit\blots\scroll.js" />
+    <Content Include="quill\test\unit\core\editor.js" />
+    <Content Include="quill\test\unit\core\quill.js" />
+    <Content Include="quill\test\unit\core\selection.js" />
+    <Content Include="quill\test\unit\formats\align.js" />
+    <Content Include="quill\test\unit\formats\bold.js" />
+    <Content Include="quill\test\unit\formats\code.js" />
+    <Content Include="quill\test\unit\formats\color.js" />
+    <Content Include="quill\test\unit\formats\header.js" />
+    <Content Include="quill\test\unit\formats\indent.js" />
+    <Content Include="quill\test\unit\formats\link.js" />
+    <Content Include="quill\test\unit\formats\list.js" />
+    <Content Include="quill\test\unit\formats\script.js" />
+    <Content Include="quill\test\unit\modules\clipboard.js" />
+    <Content Include="quill\test\unit\modules\history.js" />
+    <Content Include="quill\test\unit\modules\keyboard.js" />
+    <Content Include="quill\test\unit\modules\toolbar.js" />
+    <Content Include="quill\test\unit\theme\base\tooltip.js" />
+    <Content Include="quill\test\unit\ui\picker.js" />
+    <Content Include="quill\themes\base.js" />
+    <Content Include="quill\themes\bubble.js" />
+    <Content Include="quill\themes\snow.js" />
+    <Content Include="quill\ui\color-picker.js" />
+    <Content Include="quill\ui\icon-picker.js" />
+    <Content Include="quill\ui\icons.js" />
+    <Content Include="quill\ui\picker.js" />
+    <Content Include="quill\ui\tooltip.js" />
+    <Content Include="quill\_develop\browsers.js" />
+    <Content Include="quill\_develop\karma.config.js" />
+    <Content Include="quill\_develop\proxy.js" />
+    <Content Include="quill\_develop\sauce.js" />
+    <Content Include="quill\_develop\wdio.config.js" />
+    <Content Include="quill\_develop\webpack.config.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\yekannumbers.eot" />
+    <Content Include="Content\fonts\yekannumbers.ttf" />
+    <Content Include="Content\fonts\yekannumbers.woff" />
+    <Content Include="Content\fonts\yekanweb.eot" />
+    <Content Include="Content\fonts\yekanweb.ttf" />
+    <Content Include="Content\fonts\yekanweb.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\Vazir-Black.eot" />
+    <Content Include="Content\fonts\Vazir-Black.ttf" />
+    <Content Include="Content\fonts\Vazir-Black.woff" />
+    <Content Include="Content\fonts\Vazir-Black.woff2" />
+    <Content Include="Content\fonts\Vazir-Bold.eot" />
+    <Content Include="Content\fonts\Vazir-Bold.ttf" />
+    <Content Include="Content\fonts\Vazir-Bold.woff" />
+    <Content Include="Content\fonts\Vazir-Bold.woff2" />
+    <Content Include="Content\fonts\Vazir-Light.eot" />
+    <Content Include="Content\fonts\Vazir-Light.ttf" />
+    <Content Include="Content\fonts\Vazir-Light.woff" />
+    <Content Include="Content\fonts\Vazir-Light.woff2" />
+    <Content Include="Content\fonts\Vazir-Medium.eot" />
+    <Content Include="Content\fonts\Vazir-Medium.ttf" />
+    <Content Include="Content\fonts\Vazir-Medium.woff" />
+    <Content Include="Content\fonts\Vazir-Medium.woff2" />
+    <Content Include="Content\fonts\Vazir-Thin.eot" />
+    <Content Include="Content\fonts\Vazir-Thin.ttf" />
+    <Content Include="Content\fonts\Vazir-Thin.woff" />
+    <Content Include="Content\fonts\Vazir-Thin.woff2" />
+    <Content Include="Content\fonts\Vazir-Variable.eot" />
+    <Content Include="Content\fonts\Vazir-Variable.ttf" />
+    <Content Include="Content\fonts\Vazir-Variable.woff" />
+    <Content Include="Content\fonts\Vazir-Variable.woff2" />
+    <Content Include="Content\fonts\Vazir-Black-FD.eot" />
+    <Content Include="Content\fonts\Vazir-Black-FD.ttf" />
+    <Content Include="Content\fonts\Vazir-Black-FD.woff" />
+    <Content Include="Content\fonts\Vazir-Black-FD.woff2" />
+    <Content Include="Content\fonts\Vazir-Bold-FD.eot" />
+    <Content Include="Content\fonts\Vazir-Bold-FD.ttf" />
+    <Content Include="Content\fonts\Vazir-Bold-FD.woff" />
+    <Content Include="Content\fonts\Vazir-Bold-FD.woff2" />
+    <Content Include="Content\fonts\Vazir-Light-FD.eot" />
+    <Content Include="Content\fonts\Vazir-Light-FD.ttf" />
+    <Content Include="Content\fonts\Vazir-Light-FD.woff" />
+    <Content Include="Content\fonts\Vazir-Light-FD.woff2" />
+    <Content Include="Content\fonts\Vazir-Medium-FD.eot" />
+    <Content Include="Content\fonts\Vazir-Medium-FD.ttf" />
+    <Content Include="Content\fonts\Vazir-Medium-FD.woff" />
+    <Content Include="Content\fonts\Vazir-Medium-FD.woff2" />
+    <Content Include="Content\fonts\Vazir-Thin-FD.eot" />
+    <Content Include="Content\fonts\Vazir-Thin-FD.ttf" />
+    <Content Include="Content\fonts\Vazir-Thin-FD.woff" />
+    <Content Include="Content\fonts\Vazir-Thin-FD.woff2" />
+    <Content Include="quill\.github\CONTRIBUTING.md" />
+    <Content Include="quill\.github\DEVELOPMENT.md" />
+    <Content Include="quill\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="quill\.travis.yml" />
+    <Content Include="quill\assets\base.styl" />
+    <Content Include="quill\assets\bubble.styl" />
+    <Content Include="quill\assets\bubble\toolbar.styl" />
+    <Content Include="quill\assets\bubble\tooltip.styl" />
+    <Content Include="quill\assets\core.styl" />
+    <Content Include="quill\assets\snow.styl" />
+    <Content Include="quill\assets\snow\toolbar.styl" />
+    <Content Include="quill\assets\snow\tooltip.styl" />
+    <Content Include="quill\CHANGELOG.md" />
+    <Content Include="quill\CODE_OF_CONDUCT.md" />
+    <Content Include="quill\docs\0.20\docs\api.md" />
+    <Content Include="quill\docs\0.20\docs\configuration.md" />
+    <Content Include="quill\docs\0.20\docs\deltas.md" />
+    <Content Include="quill\docs\0.20\docs\events.md" />
+    <Content Include="quill\docs\0.20\docs\examples.md" />
+    <Content Include="quill\docs\0.20\docs\formats.md" />
+    <Content Include="quill\docs\0.20\docs\modules\authorship.md" />
+    <Content Include="quill\docs\0.20\docs\modules\index.md" />
+    <Content Include="quill\docs\0.20\docs\modules\mutli-cursors.md" />
+    <Content Include="quill\docs\0.20\docs\modules\toolbar.md" />
+    <Content Include="quill\docs\0.20\docs\quickstart.md" />
+    <Content Include="quill\docs\0.20\docs\themes.md" />
+    <Content Include="quill\docs\0.20\index.md" />
+    <Content Include="quill\docs\CNAME" />
+    <Content Include="quill\docs\docs\api.md" />
+    <Content Include="quill\docs\docs\api\contents.md" />
+    <Content Include="quill\docs\docs\api\editor.md" />
+    <Content Include="quill\docs\docs\api\events.md" />
+    <Content Include="quill\docs\docs\api\extension.md" />
+    <Content Include="quill\docs\docs\api\formatting.md" />
+    <Content Include="quill\docs\docs\api\model.md" />
+    <Content Include="quill\docs\docs\api\selection.md" />
+    <Content Include="quill\docs\docs\configuration.md" />
+    <Content Include="quill\docs\docs\delta.md" />
+    <Content Include="quill\docs\docs\download.md" />
+    <Content Include="quill\docs\docs\formats.md" />
+    <Content Include="quill\docs\docs\modules.md" />
+    <Content Include="quill\docs\docs\modules\clipboard.md" />
+    <Content Include="quill\docs\docs\modules\formula.md" />
+    <Content Include="quill\docs\docs\modules\history.md" />
+    <Content Include="quill\docs\docs\modules\keyboard.md" />
+    <Content Include="quill\docs\docs\modules\syntax.md" />
+    <Content Include="quill\docs\docs\modules\toolbar.md" />
+    <Content Include="quill\docs\docs\quickstart.md" />
+    <Content Include="quill\docs\docs\standalone\autogrow.md" />
+    <Content Include="quill\docs\docs\standalone\basic.md" />
+    <Content Include="quill\docs\docs\standalone\bubble.md" />
+    <Content Include="quill\docs\docs\standalone\collaborative.md" />
+    <Content Include="quill\docs\docs\standalone\full.md" />
+    <Content Include="quill\docs\docs\standalone\list.md" />
+    <Content Include="quill\docs\docs\standalone\snow.md" />
+    <Content Include="quill\docs\docs\themes.md" />
+    <Content Include="quill\docs\guides\adding-quill-to-your-build-pipeline.md" />
+    <Content Include="quill\docs\guides\building-a-custom-module.md" />
+    <Content Include="quill\docs\guides\cloning-medium-with-parchment.md" />
+    <Content Include="quill\docs\guides\comparison-with-other-rich-text-editors.md" />
+    <Content Include="quill\docs\guides\designing-the-delta-format.md" />
+    <Content Include="quill\docs\guides\how-to-customize-quill.md" />
+    <Content Include="quill\docs\guides\upgrading-to-1-0.md" />
+    <Content Include="quill\docs\guides\why-quill.md" />
+    <Content Include="quill\docs\_config.yml" />
+    <Content Include="quill\docs\_data\api.yaml" />
+    <Content Include="quill\docs\_data\docs.yaml" />
+    <Content Include="quill\docs\_data\guides.yaml" />
+    <Content Include="quill\docs\_drafts\.keep" />
+    <Content Include="quill\docs\_posts\2014-08-12-an-official-cdn-for-quill.md" />
+    <Content Include="quill\docs\_posts\2014-08-14-building-a-custom-module.md" />
+    <Content Include="quill\docs\_posts\2014-09-29-a-new-delta.md" />
+    <Content Include="quill\docs\_posts\2014-10-19-upgrading-to-rich-text-deltas.md" />
+    <Content Include="quill\docs\_posts\2014-11-06-quill-v0-19-no-more-iframes.md" />
+    <Content Include="quill\docs\_posts\2015-09-15-the-road-to-1-0.md" />
+    <Content Include="quill\docs\_posts\2016-03-14-are-we-there-yet-to-1-0.md" />
+    <Content Include="quill\docs\_posts\2016-05-03-quill-1-0-beta-release.md" />
+    <Content Include="quill\docs\_posts\2016-08-18-quill-1-0-release-candidate-released.md" />
+    <Content Include="quill\docs\_posts\2016-09-06-accouncing-quill-1-0.md" />
+    <Content Include="quill\Gemfile" />
+    <Content Include="quill\Gemfile.lock" />
+    <Content Include="quill\LICENSE" />
+    <Content Include="quill\package.json" />
+    <Content Include="quill\README.md" />
+    <Content Include="quill\_develop\jekyll.yml" />
+    <Content Include="quill\_develop\procfile" />
+    <Content Include="quill\_develop\scripts\release.sh" />
+    <Content Include="quill\_develop\scripts\webdriver.sh" />
+    <Content Include="quill\quill.min.js.map" />
+    <None Include="packages.config" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modal.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_DefaultLayout.cshtml" />
+    <Content Include="Views\News\ShowCategoryNews.cshtml" />
+    <Content Include="Views\News\ShowMenuNews.cshtml" />
+    <Content Include="Views\News\ShowTopNews.cshtml" />
+    <Content Include="Views\News\ShowLatestNews.cshtml" />
+    <Content Include="Views\News\NewsArchive.cshtml" />
+    <Content Include="Views\News\ShowNewsGroup.cshtml" />
+    <Content Include="Views\News\ShowNews.cshtml" />
+    <Content Include="Views\News\ShowComments.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="PageImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{9572bd8f-504c-4783-be8b-1da80ea45d47}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6557</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44378/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

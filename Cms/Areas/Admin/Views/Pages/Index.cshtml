@@ -1,0 +1,64 @@
+﻿@using Cms.Utility
+@model IEnumerable<DataLayer.Models.Page>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>
+    @Html.ActionLink("ایجاد خبر", "Create")
+</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowInSlider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/News/@item.PageId">
+                    <img src="/PageImages/@item.ImageName" alt="New's Photo'" class="thumbnail" style="max-width: 100px" />
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowInSlider)
+            </td>
+            <td>
+                <span style="font-family: 'vazir FD' !important">
+                    @item.CreateDate.ToShamsi()
+                </span>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.PageId }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.PageId })
+            </td>
+        </tr>
+    }
+</table>

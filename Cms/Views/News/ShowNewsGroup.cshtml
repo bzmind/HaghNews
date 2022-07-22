@@ -1,0 +1,67 @@
+﻿@using Cms.Utility
+@model IQueryable<DataLayer.Models.Page>
+
+@{
+    ViewBag.Title = "ShowNewsGroup";
+}
+
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">خانه</a></li>
+    <li class="breadcrumb-item"><a href="/Archive">اخبار</a></li>
+    <li class="breadcrumb-item active">@ViewBag.groupTitle</li>
+</ul>
+
+<section class="last-news-section border-radius">
+    <header>
+        <span class="groupIcon" id="techIcon">👨‍💻</span>
+        <span class="groupIcon" id="gameIcon">🎮</span>
+        <span class="groupIcon" id="hackIcon">🔒</span>
+        <h3 id="archive-title">اخبار @ViewBag.groupTitle</h3>
+    </header>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li id="EachNews">
+                <div>
+                    <a href="/News/@item.PageId"><img class="border-radius" src="/PageImages/@item.ImageName"></a>
+                </div>
+                <div>
+                    <h2><a href="/News/@item.PageId">@item.Title</a></h2>
+                    <p>@item.ShortDescription</p>
+                    <span style="font-family: 'vazir FD'" class="date-publish">@item.CreateDate.ToShamsi()</span>
+                </div>
+            </li>
+        }
+    </ul>
+</section>
+
+<ul class="pagination">
+    @for (var i = 1; i <= ViewBag.pageCount; i++)
+    {
+        <li class="@((ViewBag.currentPage == i)? "active" : "")"><a href="/Group/@ViewBag.groupID/@ViewBag.groupTitle?currentPage=@i">@i</a></li>
+    }
+</ul>
+
+<script>
+    $(document).ready(function () {
+
+        if ($('#archive-title').html().indexOf("تکنولوژی") >= 0) {
+            $('#techIcon').css({ 'display': 'inline-block' });
+        }
+        else if ($('#archive-title').html().indexOf("بازی") >= 0) {
+            $('#gameIcon').css({ 'display': 'inline-block' });
+        }
+        else if ($('#archive-title').html().indexOf("امنیت") >= 0) {
+            $('#hackIcon').css({ 'display': 'inline-block' });
+        }
+
+        $('#EachNews div:nth-child(1) img').hover(function () {
+
+            const a = $(this).closest('#EachNews').find('div h2 a');
+            const h2 = $(this).closest('#EachNews').find('div h2');
+
+            a.toggleClass("hovered");
+            h2.toggleClass("hovered");
+        });
+    })
+</script>

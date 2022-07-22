@@ -1,0 +1,42 @@
+﻿@using Cms.Utility
+@model IEnumerable<DataLayer.Models.Page>
+
+<div id="sliderContainer">
+    <div class="news-slider border-radius">
+        <div id="slider-one" class="owl-carousel">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    <div id="imageDiv">
+                        <div>
+                            <a href="/News/@item.PageId">
+                                <img src="/PageImages/@item.ImageName">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="left-side">
+                        <h2><a href="/News/@item.PageId">@item.Title</a></h2>
+                        <p style="font-weight: 300">
+                            @item.ShortDescription
+                        </p>
+                        <span style="font-weight: 300; font-size: 12px; font-family: 'vazir FD'">انتشار : @item.CreateDate.ToShamsi()</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <a href="/Archive" class="news-archive">آرشیو کامل اخبار</a>
+</div>
+
+<script>
+    $(function () {
+        $('#imageDiv div a img').hover(function () {
+
+            const a = $(this).closest('.item').find('.left-side h2 a');
+            const h2 = $(this).closest('.item').find('.left-side h2');
+
+            a.toggleClass("hovered");
+            h2.toggleClass("hovered");
+        });
+    })
+</script>

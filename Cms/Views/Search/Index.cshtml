@@ -1,0 +1,25 @@
+﻿@using Cms.Utility
+@model IQueryable<DataLayer.Models.Page>
+
+@{
+    ViewBag.Title = "NewsArchive";
+}
+
+<section class="last-news-section border-radius">
+    <header><h3>@Model.Count() خبر با عبارت "@ViewBag.name" یافت شد</h3></header>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li id="EachNews">
+                <div>
+                    <a href="/News/@item.PageId"><img class="border-radius" src="/PageImages/@item.ImageName"></a>
+                </div>
+                <div>
+                    <h2><a href="/News/@item.PageId">@item.Title</a></h2>
+                    <p>@item.ShortDescription</p>
+                    <span style="font-family: 'vazir FD'" class="date-publish">@item.CreateDate.ToShamsi()</span>
+                </div>
+            </li>
+        }
+    </ul>
+</section>

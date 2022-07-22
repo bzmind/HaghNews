@@ -1,0 +1,79 @@
+﻿@using Cms.Utility
+@model DataLayer.Models.Page
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>آیا از حذف این خبر مطمئن هستید؟</h3>
+<div>
+    <hr />
+    <dl id="newsInfo" class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageGroup.GroupTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+
+        <dd>
+            <img src="/PageImages/@Model.ImageName" class="thumbnail" style="max-width: 250px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowInSlider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowInSlider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Model.CreateDate.ToShamsi()
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input style="padding-top: 10px;" type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("بازگشت", "Index")
+        </div>
+    }
+</div>

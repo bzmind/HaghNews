@@ -1,0 +1,1633 @@
+@font-face {
+  font-family: 'vazir FD';
+  src: url('../fonts/Vazir-Bold-FD.eot') format('eot');
+  src: url('../fonts/Vazir-Bold-FD.eot') format('embedded-opentype'), url('../fonts/Vazir-Bold-FD.woff2') format('woff2'), url('../fonts/Vazir-Bold-FD.woff') format('woff'), url('../fonts/Vazir-Bold-FD.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir FD';
+  src: url('../fonts/Vazir-Black-FD.eot') format('eot');
+  src: url('../fonts/Vazir-Black-FD.eot') format('embedded-opentype'), url('../fonts/Vazir-Black-FD.woff2') format('woff2'), url('../fonts/Vazir-Black-FD.woff') format('woff'), url('../fonts/Vazir-Black-FD.ttf') format('ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir FD';
+  src: url('../fonts/Vazir-Medium-FD.eot') format('eot');
+  src: url('../fonts/Vazir-Medium-FD.eot') format('embedded-opentype'), url('../fonts/Vazir-Medium-FD.woff2') format('woff2'), url('../fonts/Vazir-Medium-FD.woff') format('woff'), url('../fonts/Vazir-Medium-FD.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir FD';
+  src: url('../fonts/Vazir-Light-FD.eot') format('eot');
+  src: url('../fonts/Vazir-Light-FD.eot') format('embedded-opentype'), url('../fonts/Vazir-Light-FD.woff2') format('woff2'), url('../fonts/Vazir-Light-FD.woff') format('woff'), url('../fonts/Vazir-Light-FD.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir FD';
+  src: url('../fonts/Vazir-Thin-FD.eot') format('eot');
+  src: url('../fonts/Vazir-Thin-FD.eot') format('embedded-opentype'), url('../fonts/Vazir-Thin-FD.woff2') format('woff2'), url('../fonts/Vazir-Thin-FD.woff') format('woff'), url('../fonts/Vazir-Thin-FD.ttf') format('ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir';
+  src: url('../fonts/Vazir-Bold.eot') format('eot');
+  src: url('../fonts/Vazir-Bold.eot') format('embedded-opentype'), url('../fonts/Vazir-Bold.woff2') format('woff2'), url('../fonts/Vazir-Bold.woff') format('woff'), url('../fonts/Vazir-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir';
+  src: url('../fonts/Vazir-Black.eot') format('eot');
+  src: url('../fonts/Vazir-Black.eot') format('embedded-opentype'), url('../fonts/Vazir-Black.woff2') format('woff2'), url('../fonts/Vazir-Black.woff') format('woff'), url('../fonts/Vazir-Black.ttf') format('ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir';
+  src: url('../fonts/Vazir-Medium.eot') format('eot');
+  src: url('../fonts/Vazir-Medium.eot') format('embedded-opentype'), url('../fonts/Vazir-Medium.woff2') format('woff2'), url('../fonts/Vazir-Medium.woff') format('woff'), url('../fonts/Vazir-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir';
+  src: url('../fonts/Vazir-Light.eot') format('eot');
+  src: url('../fonts/Vazir-Light.eot') format('embedded-opentype'), url('../fonts/Vazir-Light.woff2') format('woff2'), url('../fonts/Vazir-Light.woff') format('woff'), url('../fonts/Vazir-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vazir';
+  src: url('../fonts/Vazir-Thin.eot') format('eot');
+  src: url('../fonts/Vazir-Thin.eot') format('embedded-opentype'), url('../fonts/Vazir-Thin.woff2') format('woff2'), url('../fonts/Vazir-Thin.woff') format('woff'), url('../fonts/Vazir-Thin.ttf') format('ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+:root {
+  color-scheme: dark;
+  --main: #6c4fff;
+  --highlight: #7F66FF;
+  --bg: #181a1b;
+  --lightbg: #222426;
+  --hoverDark: #393E40;
+  --title: #B3B3B3;
+  --text: #999999;
+  --darktext: #808080;
+  --border: #393e40;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background: var(--lightbg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hoverDark);
+  border: 4px solid var(--lightbg);
+  border-radius: 55px;
+}
+
+body {
+  margin: 0;
+  border-color: var(--border);
+  padding: 0;
+  font-family: 'vazir';
+  font-weight: 100 !important;
+  font-size: 14px;
+  font-weight: normal !important;
+  color: white !important;
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+/***********Default setting************/
+
+a, i, form button {
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.2s ease-out
+}
+
+  a:hover, a:active {
+    text-decoration: none;
+    outline: none;
+  }
+
+  a:visited, a:link {
+    text-decoration: none;
+    outline: none;
+  }
+
+/*i, span, label, a {
+    display: inline-block
+}*/
+
+ul {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0
+}
+
+.border-radius {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+img.border-radius {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.top-menu ul:after, .main-menu .container ul:after, .last-news-side ul li:after, .last-news-section ul li:after,
+.access-links ul:after, .comment-layer ul li:after {
+  display: block;
+  clear: both;
+  content: '';
+  visibility: hidden;
+  height: 0;
+  line-height: 0
+}
+
+.comment-layer,
+.comment-layer, .comment-layer header span, .comment-layer ul li,
+.comment-layer ul li img, .comment-layer ul li .answer-button,
+.comment-form div input, .comment-form input[type="button"],
+.comment-form textarea {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+.margin-top-20 {
+  margin-top: 20px
+}
+
+.margin-top-30 {
+  margin-top: 30px
+}
+
+.margin-top-60 {
+  margin-top: 60px
+}
+
+#EachNews {
+  display: flex;
+}
+
+  #EachNews div:nth-child(1) {
+    width: 30%;
+    display: inline-flex;
+    align-self: flex-start;
+  }
+
+  #EachNews div:nth-child(2) {
+    width: 70%;
+    margin-right: 10px;
+  }
+
+    #EachNews div:nth-child(2) span {
+      font-size: 12px;
+      font-weight: 300;
+    }
+
+    #EachNews div:nth-child(2) p {
+      font-weight: 300;
+    }
+
+  #EachNews div:nth-child(1) img {
+    min-width: 100%;
+    align-self: flex-start;
+  }
+
+  #EachNews h2 {
+    margin-top: -10px;
+    width: 400px;
+    transition: all .25s ease-out;
+  }
+
+    #EachNews h2:hover,
+    #EachNews h2.hovered {
+      transform: translateX(-5px);
+    }
+
+    #EachNews h2 a {
+      line-height: 27px;
+      color: var(--title);
+      font-family: 'vazir FD';
+      font-weight: 500;
+      background-image: linear-gradient(120deg, #CA4FFF, var(--main));
+      background-repeat: no-repeat;
+      background-position: 110% 100%;
+      /*background-position: bottom right; this wasn't working, it caused the underline (background image) to shake'*/
+      background-size: 0% 3px;
+      transition: background-size 300ms ease-in-out;
+    }
+
+    #EachNews h2:hover a {
+      background-size: 100% 3px;
+    }
+
+    #EachNews h2 a.hovered {
+      background-size: 100% 3px;
+    }
+
+#EachTopNews {
+  height: 110px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+  #EachTopNews div {
+    display: flex;
+  }
+
+  #EachTopNews a.imageLink {
+    min-width: 120px;
+    min-height: 85px;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+
+  #EachTopNews div.newsInfo {
+    display: inline-flex;
+    margin-right: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  #EachTopNews h2 {
+    margin-left: 10px;
+    line-height: 20px;
+    font-size: 13px;
+    margin-top: -3px;
+  }
+
+    #EachTopNews h2 a {
+      color: var(--text);
+      display: block;
+      width: 100%;
+      transition: all 0.2s ease-out;
+    }
+
+      #EachTopNews h2 a:hover, #EachTopNews h2 a.hovered {
+        color: var(--highlight);
+      }
+
+  #EachTopNews span {
+    display: inline-flex;
+    line-height: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+    #EachTopNews span span {
+      margin-left: 3px;
+      margin-top: 2px;
+      direction: ltr !important;
+      white-space: nowrap;
+      font-family: 'vazir FD';
+      font-size: 12px;
+    }
+
+    #EachTopNews span.commentsSpan {
+      margin-right: 15px;
+    }
+
+  #EachTopNews .newsIcons {
+    display: flex;
+    align-items: center;
+  }
+
+.manager li a {
+  transition: all 0.2s ease-out;
+  color: var(--title)
+}
+
+.manager li:hover a {
+  color: var(--highlight);
+  padding-right: 5px;
+}
+
+.top-menu {
+  background-color: #F1F1F1;
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+  .top-menu ul {
+    float: right;
+  }
+
+    .top-menu ul li {
+      display: inline-table;
+      padding: 0 6px;
+      border-left: 1px solid var(--border);
+      float: right;
+    }
+
+      .top-menu ul li a {
+        color: #727272;
+        font-size: 18px
+      }
+
+      .top-menu ul li:first-child {
+        border-right: 1px solid var(--border)
+      }
+
+      .top-menu ul li a:hover {
+        color: var(--main)
+      }
+
+      .top-menu ul li a .fa-envelope {
+        font-size: 15px
+      }
+
+      .top-menu ul li a .fa-question-circle, .top-menu ul li a .fa-home {
+        position: relative;
+        top: 1px
+      }
+
+  .top-menu span {
+    float: left;
+    line-height: 25px
+  }
+
+.main-header {
+  padding: 15px 0
+}
+
+  .main-header #Logo {
+    float: right;
+    display: inline-block;
+    height: 65px;
+    width: 65px;
+  }
+
+  .main-header .left-side {
+    display: flex;
+    align-items: center;
+  }
+
+    .main-header .left-side a#svgLink {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .main-header .left-side div {
+      justify-content: space-between;
+      flex-direction: column;
+      display: flex;
+      height: 58px;
+      margin-bottom: 4px;
+    }
+
+      .main-header .left-side div a {
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+        padding-right: 15px;
+        height: 100%;
+      }
+
+    .main-header .left-side a path,
+    .main-header .left-side a path {
+      transition: all .15s ease-out;
+    }
+
+    .main-header .left-side a:hover path {
+      fill: var(--highlight);
+    }
+
+    .main-header .left-side a:hover path {
+      fill: var(--highlight);
+    }
+
+    .main-header .left-side div a h1 {
+      color: white;
+      font-size: 28px;
+      transition: all .2s ease-out;
+    }
+
+    .main-header .left-side div a:hover h1 {
+      color: var(--highlight);
+    }
+
+    .main-header .left-side h2 {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+  .main-header form {
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    width: 60%;
+    transition: all 0.15s ease-out;
+    position: relative;
+    margin-top: 10px
+  }
+
+    .main-header form input {
+      width: 100%;
+      border: 0;
+      background-color: var(--bg);
+      line-height: 25px;
+      padding: 8px 15px 8px 60px;
+      outline: none;
+      color: var(--title);
+    }
+
+      .main-header form input:focus ~ button path {
+        stroke: var(--main);
+      }
+
+      .main-header form input:hover ~ .main-header form {
+        border-color: var(--main) !important;
+      }
+
+    .main-header form button {
+      font-size: 20px;
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      border: none;
+    }
+
+      .main-header form button path {
+        stroke: var(--border);
+        transition: all 0.1s ease-out;
+      }
+
+      .main-header form button:hover path {
+        stroke: var(--main)
+      }
+
+
+.main-menu {
+  background-color: #222426;
+  padding: 5px 0;
+  border-bottom: 3px solid var(--main);
+  position: relative;
+  min-height: 45px
+}
+
+  .main-menu .container {
+    position: relative;
+  }
+
+    .main-menu .container > span {
+      font-size: 24px;
+      color: #fff;
+      position: absolute;
+      right: 17px;
+      top: 2px;
+      display: none
+    }
+
+      .main-menu .container > span:hover {
+        color: var(--main);
+        cursor: pointer;
+      }
+
+    .main-menu .container > ul > li {
+      display: inline-block;
+      float: right;
+      padding: 0 10px;
+      position: relative;
+    }
+
+      .main-menu .container > ul > li span {
+        transition: all 0.2s ease-out;
+      }
+
+      .main-menu .container > ul > li a, .main-menu .container > ul > li span {
+        line-height: 30px;
+        color: var(--title) !important
+      }
+
+        .main-menu .container > ul > li a:hover, .main-menu .container > ul > li span:hover {
+          color: var(--highlight) !important;
+          cursor: pointer;
+        }
+
+      .main-menu .container > ul > li > ul {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: #222426;
+        z-index: 100;
+        padding: 15px;
+        -webkit-border-bottom-right-radius: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        -moz-border-radius-bottomright: 3px;
+        -moz-border-radius-bottomleft: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        min-width: 200px;
+        display: none
+      }
+
+        .main-menu .container > ul > li > ul li {
+          position: relative;
+          padding-right: 15px
+        }
+
+          .main-menu .container > ul > li > ul li:before {
+            position: absolute;
+            right: 0;
+            font-family: 'Fontawesome';
+            font-size: 12px;
+            color: var(--main);
+            content: '\f104';
+            top: 5px
+          }
+
+
+.last-news-side {
+  border: 1px solid var(--border);
+  padding: 5px 10px 0px 10px;
+}
+
+  .last-news-side header {
+    border-bottom: 1px solid var(--border);
+    color: var(--title);
+    position: relative;
+    padding-bottom: 5px;
+    padding-right: 6px;
+  }
+
+    .last-news-side header i {
+      position: absolute;
+      right: 0;
+      top: 0
+    }
+
+    .last-news-side header h3 {
+      font-size: 18px;
+      color: var(--title);
+    }
+
+  .last-news-side ul li {
+    border-bottom: 1px solid var(--border)
+  }
+
+    .last-news-side ul li:last-child {
+      border-bottom: 0
+    }
+
+    .last-news-side ul li img {
+      width: 25%;
+      float: right;
+    }
+
+    .last-news-side ul li h2 {
+      font-size: 15px;
+      color: var(--title);
+    }
+
+    .last-news-side ul li span {
+      font-size: 15px;
+      color: #767676;
+    }
+
+
+
+.news-slider {
+  border: 1px solid var(--border);
+  direction: ltr;
+  border-radius: 15px 15px 0px 15px;
+  align-items: center;
+  display: flex;
+}
+
+.news-archive {
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  width: 120px;
+  height: 40px;
+  padding: 5px;
+  justify-content: center;
+  line-height: 25px;
+  background-color: var(--bg);
+  color: var(--title);
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-top: none;
+  transition: all 0.15s ease-out;
+}
+
+  .news-archive:hover {
+    background-color: var(--main);
+    border-color: var(--main);
+    color: white;
+  }
+
+#slider-one .item #imageDiv {
+  float: right;
+  width: 40%;
+  align-items: center;
+  display: flex;
+  padding: 15px;
+}
+
+  #slider-one .item #imageDiv div {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+
+#slider-one .item .left-side {
+  float: right;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  padding: 8px 15px 15px 15px;
+  direction: rtl;
+  border-right: 1px solid var(--border)
+}
+
+  #slider-one .item .left-side h2 {
+    font-size: 16px;
+    transition: transform 0.25s ease-out;
+  }
+
+    #slider-one .item .left-side h2 a {
+      line-height: 27px;
+      color: var(--title);
+      font-weight: 500 !important;
+      line-height: 27px;
+      color: var(--title);
+      font-family: 'vazir FD';
+      font-weight: 500;
+      background-image: linear-gradient(120deg, #CA4FFF, var(--main));
+      background-repeat: no-repeat;
+      background-position: 110% 100%;
+      /*background-position: bottom right; this wasn't working, it caused the underline (background image) to shake'*/
+      background-size: 0% 3px;
+      transition: background-size 300ms ease-in-out;
+    }
+
+    #slider-one .item .left-side h2:hover, #slider-one .item .left-side h2.hovered {
+      transform: translateX(-5px);
+    }
+
+    #slider-one .item .left-side h2 a:hover, #slider-one .item .left-side h2 a.hovered {
+      background-size: 100% 3px;
+    }
+
+  #slider-one .item .left-side p {
+    text-align: justify;
+    line-height: 24px;
+    color: var(--text);
+    margin: 15px 0px;
+    font-size: 14px;
+  }
+
+  #slider-one .item .left-side span {
+    color: var(--text);
+    font-size: 14px
+  }
+
+    #slider-one .item .left-side span i {
+      margin-left: 5px
+    }
+
+#slider-one .owl-nav {
+  position: absolute;
+  background-color: var(--bg);
+  padding: 1px;
+  border-radius: 10px;
+  bottom: -13px;
+  left: 10px;
+}
+
+  #slider-one .owl-nav .owl-prev,
+  #slider-one .owl-nav .owl-next {
+    position: relative;
+    border-radius: 7px;
+    float: left;
+    display: flex !important;
+    align-items: center;
+    background-color: var(--bg);
+    justify-content: center;
+  }
+
+    #slider-one .owl-nav .owl-prev path,
+    #slider-one .owl-nav .owl-next path {
+      transition: all .15s ease-out;
+    }
+
+    #slider-one .owl-nav .owl-prev svg,
+    #slider-one .owl-nav .owl-next svg {
+      fill: var(--bg);
+      transition: all .15s ease-out;
+    }
+
+    #slider-one .owl-nav .owl-prev:hover path:first-child,
+    #slider-one .owl-nav .owl-next:hover path:first-child {
+      fill: var(--main);
+    }
+
+    #slider-one .owl-nav .owl-prev:hover path:last-child,
+    #slider-one .owl-nav .owl-next:hover path:last-child {
+      fill: var(--main);
+    }
+
+  #slider-one .owl-nav .owl-prev {
+    margin-right: 5px;
+  }
+
+#slider-one .owl-dots {
+  display: none !important;
+}
+
+.archive header i {
+  top: 17px !important;
+}
+
+.last-news-section {
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+  .last-news-section header {
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    color: var(--title);
+    position: relative;
+    align-items: center;
+    display: flex;
+  }
+
+    .last-news-section header .clockIcon {
+      margin-left: 10px;
+      margin-right: 5px;
+      margin-bottom: 2px;
+    }
+
+    .last-news-section header .groupIcon {
+      display: none;
+      font-size: 21px;
+      margin-left: 3px;
+      margin-right: 3px;
+      padding-top: 3px;
+    }
+
+
+    .last-news-section header h3 {
+      font-size: 18px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+
+  .last-news-section ul li {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+    .last-news-section ul li:last-child {
+      border-bottom: 0
+    }
+
+    .last-news-section ul li img {
+      width: 20%;
+      float: right;
+      margin-left: 3%;
+    }
+
+    .last-news-section ul li h2 {
+      font-size: 16px;
+      color: var(--title);
+      line-height: 20px;
+      padding-top: 5px;
+      padding-bottom: 10px
+    }
+
+    .last-news-section ul li p {
+      color: var(--text);
+      font-size: 14px;
+      margin: 0px;
+      line-height: 23px;
+      padding-left: 5px;
+      text-align: justify;
+    }
+
+    .last-news-section ul li .date-publish {
+      font-size: 14px;
+      color: #a5a5a5;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+
+    .last-news-section ul li .more-link {
+      position: absolute;
+      left: 20px;
+      bottom: 15px
+    }
+
+.category-section {
+  border: 1px solid var(--border);
+  margin-bottom: 20px
+}
+
+  .category-section header {
+    border-bottom: 1px solid var(--border);
+    padding: 15px;
+    color: var(--title);
+    position: relative;
+  }
+
+    .category-section header i {
+      position: absolute;
+      right: 14px;
+      top: 15px;
+      font-size: 22px;
+      color: var(--main)
+    }
+
+    .category-section header h3 {
+      font-size: 18px;
+      color: var(--title);
+    }
+
+  .category-section li {
+    position: relative;
+    padding-right: 12px;
+    line-height: 26px;
+    padding: 6px 32px;
+    border-bottom: 1px dashed var(--border)
+  }
+
+    .category-section li:last-child {
+      border-bottom: 0
+    }
+
+    .category-section li:before {
+      position: absolute;
+      font-family: 'Fontawesome';
+      content: '\f104';
+      font-size: 15px;
+      color: #69686D;
+      right: 19px;
+      top: 6px
+    }
+
+    .category-section li a {
+      color: var(--title);
+    }
+
+      .category-section li a:hover {
+        color: var(--highlight);
+        padding-right: 5px
+      }
+
+    .category-section li span {
+      background-color: var(--main);
+      justify-content: center;
+      padding-top: 3px;
+      align-items: center;
+      display: inline-flex;
+      width: 19px;
+      padding-right: 1px;
+      height: 19px;
+      font-family: 'vazir FD';
+      color: white;
+      margin-right: 8px;
+      border-radius: 3px;
+    }
+
+
+footer {
+  width: 100%;
+  position: relative;
+  padding: 50px 0 20px 0;
+  margin-top: 20px;
+  background-color: var(--bg);
+  border-top: 1px solid var(--main)
+}
+
+  footer .container {
+    height: 100px;
+  }
+
+    footer .container div:first-child {
+      padding: 0px;
+      padding-bottom: 10px;
+    }
+
+    footer .container > div:nth-child(2) {
+      display: flex;
+      padding: 0px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    footer .container div:nth-child(2) a {
+      color: var(--darktext);
+      margin: 0px;
+      font-weight: 400;
+      margin-right: 15px;
+      transition: all .2s ease-out;
+    }
+
+      footer .container div:nth-child(2) a:hover {
+        color: var(--title);
+      }
+
+    footer .container div:nth-child(2) p {
+      color: var(--darktext);
+      padding-top: 5px;
+      margin: 0px;
+      margin-left: auto;
+    }
+
+  footer #footerLogo {
+    align-items: center;
+    display: inline-flex;
+  }
+
+    footer #footerLogo h1 {
+      font-size: 15px;
+      font-weight: 700;
+      align-self: flex-start;
+      padding-bottom: 2px;
+      margin-right: 10px;
+      color: var(--darktext);
+    }
+
+.access-links ul li {
+  width: 32%;
+  padding: 4px 15px;
+  float: right;
+  position: relative;
+  line-height: 24px;
+}
+
+  .access-links ul li:before {
+    content: '\f111';
+    position: absolute;
+    right: 0;
+    font-size: 7px;
+    top: 6px;
+    color: var(--main);
+    font-family: 'Fontawesome'
+  }
+
+  .access-links ul li a {
+    color: #fff;
+  }
+
+    .access-links ul li a:hover {
+      color: var(--main);
+      padding-right: 5px
+    }
+
+.access-links header {
+  padding: 10px 0 15px;
+  border-bottom: 1px solid #4C4B4B;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px
+}
+
+
+.socials {
+  padding-top: 35px
+}
+
+  .socials span {
+    float: right;
+    font-size: 16px;
+    color: #fff;
+    line-height: 35px
+  }
+
+  .socials a {
+    float: left;
+    margin-right: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    display: inline-flex;
+    color: var(--title);
+    background-color: var(--border);
+    line-height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    text-align: center;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+    .socials a:hover i {
+      color: var(--main) !important;
+    }
+
+.col-md-5.col-md-offset-1.col-sm-12.col-xs-12 p {
+  line-height: 24px;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 25px;
+  text-align: justify;
+}
+
+.icons {
+  background: url('../img/sprite.png') no-repeat;
+  position: relative;
+}
+
+.icon-star {
+  background-position: 0 0;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-doc-1 {
+  background-position: -2px -27px;
+  width: 22px;
+  height: 24px;
+}
+
+.icon-doc-2 {
+  background-position: -1px -55px;
+  width: 22px;
+  height: 24px;
+}
+
+.icon-more {
+  background-position: -1px -85px;
+  width: 32px;
+  height: 16px;
+}
+
+
+.single-news {
+  border: 1px solid var(--border);
+}
+
+  .single-news article div#videoWrapper {
+    margin-bottom: 15px;
+  }
+
+  .single-news article #iframeContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+    .single-news article #iframeContainer iframe {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+  .single-news header {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    color: var(--title);
+    position: relative;
+  }
+
+    .single-news header h2 {
+      font-size: 18px;
+      color: var(--title);
+    }
+
+    .single-news header span {
+      color: var(--title);
+      left: 16px;
+      font-weight: 300;
+      position: absolute;
+      top: 11px;
+    }
+
+      .single-news header span i {
+        margin-left: 3px
+      }
+
+  .single-news article {
+    padding: 10px 20px;
+  }
+
+    .single-news article img:first-child {
+      border-radius: 15px !important;
+    }
+
+    .single-news article img:not(:first-child),
+    .single-news article p:not(:first-child) img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      margin: 0 0 15px 0 !important;
+      border-radius: 10px !important;
+    }
+
+    .single-news article li {
+      line-height: 35px;
+      font-size: 16px;
+    }
+
+    .single-news article h1 {
+      font-family: 'vazir' !important;
+      font-size: 18px;
+      line-height: 35px;
+      color: white;
+      background-color: var(--lightbg);
+      border-right: 5px solid var(--main);
+      border-radius: 10px 3px 3px 10px;
+      padding: 15px 15px;
+      margin: 20px 0 15px 0;
+    }
+
+    .single-news article h2 {
+      font-size: 16px;
+      line-height: 35px;
+    }
+
+    .single-news article p {
+      line-height: 30px !important;
+      margin: 0px !important;
+      margin-bottom: 13px !important;
+      font-size: 16px !important;
+      font-family: 'vazir' !important;
+      font-weight: 300 !important;
+      text-align: justify !important;
+      color: white !important;
+    }
+
+    .single-news article blockquote {
+      margin-bottom: 13px;
+    }
+
+    .single-news article p:last-child {
+      margin: 0px !important;
+    }
+
+    .single-news article p a,
+    .single-news article h1 a {
+      line-height: 30px !important;
+      font-size: 16px !important;
+      font-family: 'vazir' !important;
+      color: #4DA0FF !important;
+      font-weight: 500;
+      background-image: linear-gradient(120deg, #4DA0FF, #4DA0FF);
+      background-repeat: no-repeat;
+      background-position: 110% 100%;
+      /*background-position: bottom right; this wasn't working, it caused the underline (background image) to shake'*/
+      background-size: 100% 0px;
+      transition: background-size 100ms ease-out !important;
+    }
+
+      .single-news article p a:hover, .single-news article h1 a:hover {
+        background-size: 100% 3px;
+      }
+
+    .single-news article p span {
+      line-height: 30px !important;
+      font-size: 16px !important;
+      font-family: 'vazir' !important;
+      font-weight: 500;
+      color: white !important;
+    }
+
+.keywords {
+  border: 1px solid var(--border);
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .keywords a {
+    padding: 5px 5px 4px 5px;
+    background-color: #272640;
+    line-height: 18px;
+    font-size: 14px;
+    color: #9D8CFF;
+    font-weight: 400;
+    margin: 3px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+    .keywords a:hover {
+      background-color: #2E2D4D;
+      color: #A899FF;
+    }
+
+.breadcrumb {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+  .breadcrumb .active {
+    color: var(--title);
+  }
+
+  .breadcrumb li a {
+    color: var(--title);
+    transition: all 0.1s ease-out;
+  }
+
+  .breadcrumb li:hover a {
+    color: var(--main);
+    transition: all 0.1s ease-out;
+  }
+
+.comment-layer {
+  width: 100%;
+  border: 1px solid var(--border);
+  margin: 15px 0
+}
+
+  .comment-layer header {
+    position: relative;
+    height: 45px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+  }
+
+    .comment-layer header div {
+      display: flex;
+      align-items: center;
+    }
+
+      .comment-layer header div svg {
+        color: var(--title);
+        margin-right: 15px;
+      }
+
+      .comment-layer header div h5 {
+        margin-right: 10px;
+        font-size: 18px;
+        color: var(--title);
+        line-height: 45px
+      }
+
+    .comment-layer header span {
+      font-size: 15px;
+      color: #fff;
+      background-color: var(--main);
+      position: absolute;
+      line-height: 30px;
+      border-radius: 7px;
+      padding: 0 15px;
+      left: 7px;
+      top: 7px
+    }
+
+  .comment-layer ul {
+    padding: 15px 15px 0px 15px;
+  }
+
+    .comment-layer ul li {
+      padding: 10px;
+      border: 1px solid var(--border);
+      position: relative;
+      color: var(--title);
+      display: flex;
+    }
+
+      .comment-layer ul li:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      .comment-layer ul li .commentIcon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 10px;
+        border-left: 2px solid var(--lightbg);
+      }
+
+        .comment-layer ul li .commentIcon .gradientBorder {
+          width: 55px;
+          height: 55px;
+          background-image: linear-gradient(180deg, var(--main), #FF7733);
+        }
+
+        .comment-layer ul li .commentIcon span {
+          width: 51px;
+          height: 51px;
+          justify-content: center;
+          align-items: center;
+          display: inline-flex;
+          border-radius: 100%;
+          background-color: var(--bg);
+        }
+
+          .comment-layer ul li .commentIcon span svg {
+            width: 25px;
+            height: 25px;
+          }
+
+      .comment-layer ul li .commentInfo {
+        margin-right: 10px;
+      }
+
+        .comment-layer ul li .commentInfo .commentName {
+          flex-direction: column;
+          display: flex;
+        }
+
+          .comment-layer ul li .commentInfo .commentName .date {
+            margin-top: 9px;
+            line-height: 13px;
+            color: var(--darktext);
+            font-size: 13px;
+          }
+
+          .comment-layer ul li .commentInfo .commentName .name {
+            line-height: 15px;
+          }
+
+        .comment-layer ul li .commentInfo .mainComment {
+          margin-top: 15px;
+        }
+
+          .comment-layer ul li .commentInfo .mainComment p {
+            margin: 0px;
+            line-height: 28px;
+          }
+
+
+  .comment-layer h6 {
+    font-size: 18px;
+    color: var(--title);
+    line-height: 40px;
+    border-bottom: 1px solid var(--border);
+    padding: 15px
+  }
+
+.comment-form {
+  padding: 15px
+}
+
+  .comment-form div {
+    width: 100%;
+    float: right
+  }
+
+    .comment-form div input {
+      width: 50%;
+      border-radius: 7px;
+      color: var(--title);
+      margin-bottom: 10px;
+      border: 1px solid var(--border);
+      line-height: 35px;
+      padding: 0 15px
+    }
+
+    .comment-form div label {
+      width: 100%
+    }
+
+      .comment-form div label input {
+        width: 65%;
+        float: right
+      }
+
+      .comment-form div label img {
+        float: left
+      }
+
+  .comment-form textarea {
+    border-radius: 7px;
+    width: 100%;
+    min-height: 40px;
+    resize: vertical;
+    outline: none;
+    color: var(--title);
+    margin-bottom: 15px;
+    height: 150px;
+    border: 1px solid var(--border);
+    background-color: var(--lightbg);
+    padding: 5px;
+    transition: border 0.1s ease-out;
+    line-height: 22px
+  }
+
+    .comment-form textarea:focus {
+      border-color: var(--main);
+    }
+
+  .comment-form input {
+    background-color: var(--lightbg);
+    outline: none;
+    transition: all 0.1s ease-out;
+  }
+
+    .comment-form input:focus {
+      border-color: var(--main);
+    }
+
+    .comment-form input[type="button"] {
+      width: 100%;
+      border: 1px solid var(--main);
+      padding: 5px;
+      color: #fff;
+      background-color: var(--main);
+      border-radius: 7px;
+      line-height: 30px;
+      transition: all 0.2s ease-out;
+    }
+
+      .comment-form input[type="button"]:hover, .comment-form input[type="button"]:active {
+        background-color: #573FCC;
+        cursor: pointer
+      }
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: var(--main);
+  border-color: var(--main);
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: var(--title)
+}
+
+.pagination li a {
+  font-family: 'vazir FD';
+  border-color: var(--border);
+  line-height: 10px;
+  background-color: var(--lightbg);
+  font-size: 17px;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  padding: 2px 0 0 0;
+  margin: 0px;
+}
+
+.pagination li:not(.active) a:hover {
+  background-color: var(--hoverDark);
+  border-color: var(--border);
+  color: white;
+}
+
+@media screen and (max-width : 1280px) {
+  .comment-form div label input {
+    width: 55%
+  }
+}
+
+@media screen and (max-width : 1199px) {
+  .last-news-side ul li img {
+    display: none
+  }
+
+  .last-news-section ul li img {
+    width: 25%
+  }
+
+  #slider-one .item img {
+    width: 45%
+  }
+
+  #slider-one .item .left-side {
+    width: 55%
+  }
+}
+
+
+@media screen and (max-width : 767px) {
+  .main-menu .container > span {
+    display: block;
+  }
+
+  .main-menu .container > ul {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    width: 250px;
+    background-color: var(--title);
+    padding: 15px;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: none;
+    z-index: 100
+  }
+
+    .main-menu .container > ul li {
+      display: block;
+      float: none
+    }
+
+    .main-menu .container > ul > li > ul {
+      position: static;
+      padding: 0 25px 0 10px
+    }
+
+  .main-header form {
+    width: 100%;
+    margin-top: 15px
+  }
+
+  .news-slider {
+    display: none
+  }
+
+  .last-news-section {
+    margin-top: 0
+  }
+
+    .last-news-section ul li img {
+      display: none
+    }
+
+  .last-news-side {
+    margin-top: 25px
+  }
+}
+
+@media screen and (max-width : 480px) {
+  .main-header .left-side h1 {
+    font-size: 16px
+  }
+
+  .access-links ul li {
+    width: 50%
+  }
+
+  .last-news-section ul li .date-publish {
+    position: static;
+  }
+
+  .single-news header span {
+    position: static;
+    margin-top: 10px
+  }
+
+  .comment-layer ul li .alert-report, .comment-layer ul li .answer-button {
+    display: none
+  }
+
+  .comment-form div, .comment-form textarea {
+    width: 100%;
+    float: none
+  }
+}

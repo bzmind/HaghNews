@@ -1,0 +1,159 @@
+﻿@model DataLayer.Models.Page
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>ایجاد خبر جدید</h2>
+
+@using (Html.BeginForm("Create", "Pages", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "fillText()" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.GroupId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("GroupID", null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GroupId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShortDescription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Text, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div id="editor"></div>
+                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control", style = "display: none" } })
+                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tags, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tags, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input id="imageUpload" type="file" name="imgUp" style="display: none;" accept=".png, .jpg, .jpeg" />
+                <button class="btn btn-primary" type="button" onclick="$('#imageUpload').click();" style="padding-top: 10px;">Browse</button>
+                <img id="imagePreview" src="#" class="thumbnail" style="max-width: 250px; display: none; margin-top: 10px;" />
+
+                @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShowInSlider, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ShowInSlider)
+                    @Html.ValidationMessageFor(model => model.ShowInSlider, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ایجاد" class="btn btn-success">
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("بازگشت به لیست اخبار", "Index")
+</div>
+
+@section scripts
+{
+    <script src="/quill/quill.js"></script>
+    <script src="/quill/quill.min.js"></script>
+    <link href="/quill/quill.snow.css" rel="stylesheet">
+    <link href="/quill/quill.bubble.css" rel="stylesheet">
+
+    <script>
+        $(function () {
+
+            var toolbarOptions = [
+                ['bold', 'italic', 'underline', 'strike'],
+                ['blockquote', 'code-block'],
+                [{ 'header': 1 }, { 'header': 2 }],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                [{ 'script': 'sub' }, { 'script': 'super' }],
+                [{ 'indent': '-1' }, { 'indent': '+1' }],
+                [{ 'direction': 'rtl' }],
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                [{ 'color': [] }, { 'background': [] }],
+                [{ 'font': [] }],
+                [{ 'align': [] }],
+                ['link', 'image', 'video'],
+                ['clean'],
+                ['image']
+            ];
+
+            var quill = new Quill('#editor', {
+                modules: {
+                    toolbar: {
+                        container: toolbarOptions,
+                        handlers: {
+                            image: imageHandler
+                        }
+                    }
+                },
+
+                theme: 'snow'
+            });
+
+            quill.format('direction', 'rtl');
+            quill.format('align', 'right');
+
+            function imageHandler() {
+                var range = this.quill.getSelection();
+                var value = prompt('What is the image URL');
+                if (value) {
+                    this.quill.insertEmbed(range.index, 'image', value, Quill.sources.USER);
+                }
+            }
+
+            $('#imageUpload').change(function () {
+
+                const file = $(this).prop('files')[0];
+
+                if (file) {
+                    $('#imagePreview').attr('src', URL.createObjectURL(file));
+                    URL.revokeObjectURL(file);
+                    $('#imagePreview').css({ 'display': 'block' });
+                }
+            });
+        });
+
+        function fillText() {
+            $('#Text').val($('.ql-editor').html());
+        }
+
+    </script>
+}
