@@ -608,6 +608,7 @@
     <Content Include="quill\_develop\scripts\release.sh" />
     <Content Include="quill\_develop\scripts\webdriver.sh" />
     <Content Include="quill\quill.min.js.map" />
+    <Content Include="Areas\Admin\Views\Web.config" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
